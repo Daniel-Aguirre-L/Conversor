@@ -2,10 +2,8 @@ import aplicaciones.Moneda;
 import aplicaciones.Temperatura;
 import aplicaciones.TipoDeConversion;
 import metodos.Convertir;
-
 import javax.swing.*;
 import java.util.Arrays;
-
 public class Menu extends JFrame {
 
     public static <Enums extends Enum<Enums>> String[] getEnumValues(Class<Enums> enumClass) {
@@ -21,6 +19,7 @@ public class Menu extends JFrame {
         String menuAplicacion = "";
         String menuSeleccion1 = "";
         String menuSeleccion2 = "";
+        double valor = 0;
 
        menuAplicacion = (String) JOptionPane.showInputDialog(null,
                 "Selecciona una opción de conversión","Menu", JOptionPane.QUESTION_MESSAGE,
@@ -36,7 +35,7 @@ public class Menu extends JFrame {
                         "A","Moneda", JOptionPane.QUESTION_MESSAGE,
                         null,seleccion,seleccion[0]);
                 if (menuSeleccion1 == menuSeleccion2) {
-                    JOptionPane.showMessageDialog(null,"No hay nada que convertir");
+                    JOptionPane.showMessageDialog(null, "No hay nada que convertir");
                     break;
                 }
 
@@ -51,10 +50,12 @@ public class Menu extends JFrame {
                 if (menuSeleccion1 == menuSeleccion2) {
                     JOptionPane.showMessageDialog(null,"No hay nada que convertir");
                 }
+                if (menuSeleccion1 != menuSeleccion2)  {
+                    valor = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a convertir"));
+                }
+                JOptionPane.showMessageDialog(null,Convertir.convertirTemperatura
+                        (valor,menuSeleccion1,menuSeleccion2)+ " Grados " + menuSeleccion2);
         }
-        JOptionPane.showInputDialog("Ingrese el valor a convertir");
-
-
     }
 
 }

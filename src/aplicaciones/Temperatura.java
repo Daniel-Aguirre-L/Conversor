@@ -1,8 +1,9 @@
 package aplicaciones;
 
 public enum Temperatura {
-    CELSIUS ("Grados Celsius"),
-    FAHRENHEIT ("Grados Fahrenheit");
+    CELSIUS ("Celsius"),
+    FAHRENHEIT ("Fahrenheit"),
+    KELVIN ("Kelvin");
     private final String descripcion;
 
     Temperatura (String descripcion) {
@@ -11,6 +12,7 @@ public enum Temperatura {
     public String getDescripcion() {
         return descripcion;
     }
+
 
     @Override
     public String toString() {
