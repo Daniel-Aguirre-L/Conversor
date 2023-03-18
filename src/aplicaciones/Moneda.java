@@ -4,7 +4,7 @@ public enum Moneda {
     DOLAR("USD", "Dolar"),
     EURO("EUR", "Euro"),
     PESO("COP", "Peso Colombiano"),
-    LIBRA("GBP", "LibraEsterlina"),
+    LIBRA("GBP", "Libra Esterlina"),
     YEN("JPY", "Yen Japones"),
     WON("KRW", "Won Surcoreano");
 
@@ -25,6 +25,7 @@ public enum Moneda {
     }
     @Override
     public String toString() {
-        return codigo;
+        return descripcion;
     }
+
 }
