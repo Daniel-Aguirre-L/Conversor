@@ -1,16 +1,22 @@
+
 import aplicaciones.Moneda;
 import aplicaciones.Temperatura;
 import aplicaciones.TipoDeConversion;
 import metodos.Convertir;
+
 import javax.swing.*;
 import java.util.Arrays;
+
 public class Menu extends JFrame {
 
+    // Método para obtener los valores de una enumeración como un arreglo de cadenas de texto
     public static <Enums extends Enum<Enums>> String[] getEnumValues(Class<Enums> enumClass) {
         return Arrays.stream(enumClass.getEnumConstants())
                 .map(Enum::toString)
                 .toArray(String[]::new);
     }
+
+    // Obtener los valores de las enumeraciones Moneda y Temperatura como arreglos de cadenas de texto
     String[] aplicacion = getEnumValues(TipoDeConversion.class);
     String[] seleccion = getEnumValues(Moneda.class);
     String[] seleccion2 = getEnumValues(Temperatura.class);
@@ -21,47 +27,72 @@ public class Menu extends JFrame {
         String menuSeleccion2;
         double valor = 0;
 
-       menuAplicacion = (String) JOptionPane.showInputDialog(null,
-                "Selecciona una opción de conversión","Menu", JOptionPane.QUESTION_MESSAGE,
-                null,aplicacion,aplicacion);
+        do {
+            // Mostrar el menú de conversiones y obtener las opciónes seleccionadas por el usuario
+            menuAplicacion = (String) JOptionPane.showInputDialog(null,
+                    "Selecciona una opción de conversión", "Menu", JOptionPane.QUESTION_MESSAGE,
+                    null, aplicacion, aplicacion);
 
-        switch (menuAplicacion) {
-            case "Conversor de Divisas":
-                menuSeleccion1 = (String) JOptionPane.showInputDialog(null,
-                        "De","Moneda", JOptionPane.QUESTION_MESSAGE,
-                        null,seleccion,seleccion[0]);
+            switch (menuAplicacion) {
+                case "Conversor de Divisas":
+                    menuSeleccion1 = (String) JOptionPane.showInputDialog(null,
+                            "De", "Moneda", JOptionPane.QUESTION_MESSAGE,
+                            null, seleccion, seleccion[0]);
 
-                menuSeleccion2 = (String) JOptionPane.showInputDialog(null,
-                        "A","Moneda", JOptionPane.QUESTION_MESSAGE,
-                        null,seleccion,seleccion[0]);
-                if (menuSeleccion1.equals(menuSeleccion2)) {
-                    JOptionPane.showMessageDialog(null, "No hay nada que convertir");
-                }
-                if (!menuSeleccion1.equals(menuSeleccion2))  {
-                    valor = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a convertir"));
-                }
-                JOptionPane.showMessageDialog(null,Convertir.convertirTemperatura
-                        (valor,menuSeleccion1,menuSeleccion2) + menuSeleccion2);
-                break;
+                    menuSeleccion2 = (String) JOptionPane.showInputDialog(null,
+                            "A", "Moneda", JOptionPane.QUESTION_MESSAGE,
+                            null, seleccion, seleccion[0]);
 
+                    if (menuSeleccion1.equals(menuSeleccion2)) {
+                        JOptionPane.showMessageDialog(null, "No hay nada que convertir");
+                    }
 
-            case "Conversor de Temperatura":
-                menuSeleccion1 = (String) JOptionPane.showInputDialog(null,
-                        "De","Te", JOptionPane.QUESTION_MESSAGE,
-                        null,seleccion2,seleccion2[0]);
+                    if (!menuSeleccion1.equals(menuSeleccion2)) {
+                        try {
+                            valor = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a convertir"));
+                        } catch (NumberFormatException e) {
+                            JOptionPane.showMessageDialog(null, "Debe ingresar un valor numérico válido");
+                            continue;
+                        }
 
-                menuSeleccion2 = (String) JOptionPane.showInputDialog(null,
-                        "A","Te", JOptionPane.QUESTION_MESSAGE,
-                        null,seleccion2,seleccion2[0]);
-                if (menuSeleccion1.equals(menuSeleccion2) ) {
-                    JOptionPane.showMessageDialog(null,"No hay nada que convertir");
-                }
-                if (!menuSeleccion1.equals(menuSeleccion2))  {
-                    valor = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a convertir"));
-                }
-                JOptionPane.showMessageDialog(null,Convertir.convertirTemperatura
-                        (valor,menuSeleccion1,menuSeleccion2)+ " Grados " + menuSeleccion2);
-        }
+                        JOptionPane.showMessageDialog(null, String.format("%.2f", Convertir.convertirDivisas
+                                (valor, menuSeleccion1, menuSeleccion2)) + menuSeleccion2);
+                    }
+                    break;
+
+                case "Conversor de Temperatura":
+                    menuSeleccion1 = (String) JOptionPane.showInputDialog(null,
+                            "De", "Te", JOptionPane.QUESTION_MESSAGE,
+                            null, seleccion2, seleccion2[0]);
+
+                    menuSeleccion2 = (String) JOptionPane.showInputDialog(null,
+                            "A", "Te", JOptionPane.QUESTION_MESSAGE,
+                            null, seleccion2, seleccion2[0]);
+
+                    if (menuSeleccion1.equals(menuSeleccion2)) {
+                        JOptionPane.showMessageDialog(null, "No hay nada que convertir");
+                    }
+
+                    if (!menuSeleccion1.equals(menuSeleccion2)) {
+                        try {
+                            valor = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a convertir"));
+                        } catch (NumberFormatException e) {
+                            JOptionPane.showMessageDialog(null, "Debe ingresar un valor numérico válido");
+                            continue;
+                        }
+
+                        JOptionPane.showMessageDialog(null, String.format("%.2f", Convertir.convertirTemperatura
+                                (valor, menuSeleccion1, menuSeleccion2)) + " Grados " + menuSeleccion2);
+                    }
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(null, "Opción inválida");
+            }
+
+        } while (JOptionPane.showConfirmDialog(null, "¿Desea hacer otra conversión?",
+                "Nuevo cálculo", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
+
+        JOptionPane.showMessageDialog(null, "Gracias por usar el programa. El programa se cerrará ahora.");
     }
-
 }

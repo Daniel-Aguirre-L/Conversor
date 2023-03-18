@@ -1,4 +1,5 @@
-import javax.swing.*;
+package metodos;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -9,9 +10,8 @@ public class ConvertirApi {
     public static void Api(String monedaInicial, String monedaDestino, double valorMoneda)
             throws Exception {
 
-        String url = "https://api.getgeoapi.com/v2/currency/convert" +
-                "?api_key=40066d1895c12dfe77c017f6e010f585e5a4bfcf&from=" + monedaInicial +
-                "&to=" + monedaDestino + "&amount=" + valorMoneda;
+        String url = "https://api.getgeoapi.com/v2/currency/convert?" +
+                "api_key=40066d1895c12dfe77c017f6e010f585e5a4bfcf&from=COP&to=USD&amount=5000";
 
 
         HttpClient client = HttpClient.newHttpClient();
@@ -23,7 +23,7 @@ public class ConvertirApi {
         HttpResponse<String> respuesta = client.send(request, HttpResponse.BodyHandlers.ofString());
 
 
-        JOptionPane.showMessageDialog(null,respuesta.body());
+        System.out.println(respuesta.body());
     }
 }
 

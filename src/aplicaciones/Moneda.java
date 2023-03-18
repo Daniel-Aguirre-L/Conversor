@@ -25,6 +25,6 @@ public enum Moneda {
     }
     @Override
     public String toString() {
-        return descripcion;
+        return codigo;
     }
 }
