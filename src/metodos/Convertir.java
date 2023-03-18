@@ -5,29 +5,28 @@ public class Convertir {
     public static double convertirTemperatura(double valor, String medidaInicial, String medidaFinal) {
         double resultado = 0;
         switch (medidaInicial) {
-            case "Celsius":
+            case "Celsius" -> {
                 if (medidaFinal.equals("Fahrenheit")) {
                     resultado = valor * 1.8 + 32;
                 } else if (medidaFinal.equals("Kelvin")) {
                     resultado = valor + 273.15;
                 }
-                break;
-            case "Fahrenheit":
+            }
+            case "Fahrenheit" -> {
                 if (medidaFinal.equals("Celsius")) {
                     resultado = (valor - 32) / 1.8;
                 } else if (medidaFinal.equals("Kelvin")) {
                     resultado = (valor + 459.67) / 1.8;
                 }
-                break;
-            case "Kelvin":
+            }
+            case "Kelvin" -> {
                 if (medidaFinal.equals("Celsius")) {
                     resultado = valor - 273.15;
                 } else if (medidaFinal.equals("Fahrenheit")) {
                     resultado = valor * 1.8 - 459.67;
                 }
-                break;
-            default:
-                System.out.println("Unidad de medida no válida.");
+            }
+            default -> System.out.println("Unidad de medida no válida.");
         }
         return resultado;
     }

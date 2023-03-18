@@ -16,9 +16,9 @@ public class Menu extends JFrame {
     String[] seleccion2 = getEnumValues(Temperatura.class);
 
     public Menu() {
-        String menuAplicacion = "";
-        String menuSeleccion1 = "";
-        String menuSeleccion2 = "";
+        String menuAplicacion;
+        String menuSeleccion1;
+        String menuSeleccion2;
         double valor = 0;
 
        menuAplicacion = (String) JOptionPane.showInputDialog(null,
@@ -34,10 +34,16 @@ public class Menu extends JFrame {
                 menuSeleccion2 = (String) JOptionPane.showInputDialog(null,
                         "A","Moneda", JOptionPane.QUESTION_MESSAGE,
                         null,seleccion,seleccion[0]);
-                if (menuSeleccion1 == menuSeleccion2) {
+                if (menuSeleccion1.equals(menuSeleccion2)) {
                     JOptionPane.showMessageDialog(null, "No hay nada que convertir");
-                    break;
                 }
+                if (!menuSeleccion1.equals(menuSeleccion2))  {
+                    valor = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a convertir"));
+                }
+                JOptionPane.showMessageDialog(null,Convertir.convertirTemperatura
+                        (valor,menuSeleccion1,menuSeleccion2) + menuSeleccion2);
+                break;
+
 
             case "Conversor de Temperatura":
                 menuSeleccion1 = (String) JOptionPane.showInputDialog(null,
@@ -47,10 +53,10 @@ public class Menu extends JFrame {
                 menuSeleccion2 = (String) JOptionPane.showInputDialog(null,
                         "A","Te", JOptionPane.QUESTION_MESSAGE,
                         null,seleccion2,seleccion2[0]);
-                if (menuSeleccion1 == menuSeleccion2) {
+                if (menuSeleccion1.equals(menuSeleccion2) ) {
                     JOptionPane.showMessageDialog(null,"No hay nada que convertir");
                 }
-                if (menuSeleccion1 != menuSeleccion2)  {
+                if (!menuSeleccion1.equals(menuSeleccion2))  {
                     valor = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a convertir"));
                 }
                 JOptionPane.showMessageDialog(null,Convertir.convertirTemperatura
