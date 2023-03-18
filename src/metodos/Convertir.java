@@ -44,12 +44,12 @@ public class Convertir {
 
         // Determinar las tasas de cambio de la moneda de origen y destino
         switch (monedaInicial) {
-            case "Dolar" -> fromRate = dollarRate;
-            case "Euro" -> fromRate = euroRate;
-            case "Libra Esterlina" -> fromRate = sterlingRate;
-            case "Yen Japones" -> fromRate = yenRate;
-            case "Won Surcoreano" -> fromRate = wonRate;
-            case "Peso Colombiano" -> fromRate = pesoRate;
+            case "Dolares" -> fromRate = dollarRate;
+            case "Euros" -> fromRate = euroRate;
+            case "Libras Esterlinas" -> fromRate = sterlingRate;
+            case "Yenes Japoneses" -> fromRate = yenRate;
+            case "Wons Surcoreanos" -> fromRate = wonRate;
+            case "Pesos Colombianos" -> fromRate = pesoRate;
             default -> {
                 System.out.println("Moneda de origen no válida");
                 return 0.0;
@@ -57,12 +57,12 @@ public class Convertir {
         }
 
         switch (monedaFinal) {
-            case "Dolar" -> toRate = dollarRate;
-            case "Euro" -> toRate = euroRate;
-            case "Libra Esterlina" -> toRate = sterlingRate;
-            case "Yen Japones" -> toRate = yenRate;
-            case "Won Koreano" -> toRate = wonRate;
-            case "Peso Colombiano" -> toRate = pesoRate;
+            case "Dolares" -> toRate = dollarRate;
+            case "Euros" -> toRate = euroRate;
+            case "Libras Esterlinas" -> toRate = sterlingRate;
+            case "Yenes Japoneses" -> toRate = yenRate;
+            case "Wons Koreanos" -> toRate = wonRate;
+            case "Pesos Colombianos" -> toRate = pesoRate;
             default -> {
                 System.out.println("Moneda de destino no válida");
                 return 0.0;

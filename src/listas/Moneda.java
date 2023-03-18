@@ -1,12 +1,12 @@
-package aplicaciones;
+package listas;
 
 public enum Moneda {
-    DOLAR("USD", "Dolar"),
-    EURO("EUR", "Euro"),
-    PESO("COP", "Peso Colombiano"),
-    LIBRA("GBP", "Libra Esterlina"),
-    YEN("JPY", "Yen Japones"),
-    WON("KRW", "Won Surcoreano");
+    DOLAR("USD", "Dolares"),
+    EURO("EUR", "Euros"),
+    PESO("COP", "Pesos Colombianos"),
+    LIBRA("GBP", "Libras Esterlinas"),
+    YEN("JPY", "Yenes Japoneses"),
+    WON("KRW", "Wons Surcoreanos");
 
     private final String codigo;
     private final String descripcion;

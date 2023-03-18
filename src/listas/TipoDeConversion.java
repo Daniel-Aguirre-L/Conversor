@@ -1,8 +1,8 @@
-package aplicaciones;
+package listas;
 
 public enum TipoDeConversion {
 
-    DIVISASONLINE ("Divisas Online"),
+    DIVISASONLINE ("Conversor de Divisas Online"),
     DIVISAS ("Conversor de Divisas"),
     TEMPERATURA ("Conversor de Temperatura");
     private final String descripcion;

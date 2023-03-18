@@ -1,6 +1,8 @@
-import aplicaciones.Moneda;
-import aplicaciones.Temperatura;
-import aplicaciones.TipoDeConversion;
+package menu;
+
+import listas.Moneda;
+import listas.Temperatura;
+import listas.TipoDeConversion;
 import metodos.Convertir;
 import metodos.ConvertirApi;
 
@@ -27,21 +29,31 @@ public class Menu extends JFrame {
         String menuSeleccion2;
         double valor;
 
+
         do {
             // Mostrar el menú de conversiones y obtener las opciónes seleccionadas por el usuario
             menuAplicacion = (String) JOptionPane.showInputDialog(null,
-                    "Selecciona una opción de conversión", "Menu", JOptionPane.QUESTION_MESSAGE,
+                    "Selecciona una opción de conversión", "Menu de selección", JOptionPane.QUESTION_MESSAGE,
                     null, aplicacion, aplicacion);
-
+            if (menuAplicacion == null) {
+                continue; // Salir del ciclo actual y volver a mostrar el menú principal
+            }
             switch (menuAplicacion) {
-                //Metodo para el conversor de divisas offline usando ratios predeterminados
+
+                //Menus para el conversor de divisas offline usando ratios predeterminados
                 case "Conversor de Divisas" -> {
                     menuSeleccion1 = (String) JOptionPane.showInputDialog(null,
-                            "De", "Moneda", JOptionPane.QUESTION_MESSAGE,
+                            "Seleccione la moneda de origen", "Conversor de Divisas", JOptionPane.QUESTION_MESSAGE,
                             null, seleccion, seleccion[0]);
+                    if (menuSeleccion1 == null) {
+                        continue; // Salir del ciclo actual y volver a mostrar el menú principal
+                    }
                     menuSeleccion2 = (String) JOptionPane.showInputDialog(null,
-                            "A", "Moneda", JOptionPane.QUESTION_MESSAGE,
+                            "Seleccione la moenda de destino", "Conversor de Divisas", JOptionPane.QUESTION_MESSAGE,
                             null, seleccion, seleccion[0]);
+                    if (menuSeleccion2 == null) {
+                        continue; // Salir del ciclo actual y volver a mostrar el menú principal
+                    }
                     if (menuSeleccion1.equals(menuSeleccion2)) {
                         JOptionPane.showMessageDialog(null, "No hay nada que convertir");
                     }
@@ -52,19 +64,27 @@ public class Menu extends JFrame {
                             JOptionPane.showMessageDialog(null, "Debe ingresar un valor numérico válido");
                             continue;
                         }
-
-                        JOptionPane.showMessageDialog(null, String.format("%.2f", Convertir.convertirDivisas
-                                (valor, menuSeleccion1, menuSeleccion2)) + " " + menuSeleccion2);
+                        //Se usa el metodo de la clase Convertir
+                        double resultado = Convertir.convertirDivisas(valor, menuSeleccion1, menuSeleccion2);
+                        String mensaje = String.format("%.2f %s equivalen a %.2f %s", valor, menuSeleccion1, resultado, menuSeleccion2);
+                        JOptionPane.showMessageDialog(null, mensaje);
                     }
                 }
-                //Metodo para el conversor de temperatura
+
+                //Menus para el conversor de temperaturas
                 case "Conversor de Temperatura" -> {
                     menuSeleccion1 = (String) JOptionPane.showInputDialog(null,
-                            "De", "Te", JOptionPane.QUESTION_MESSAGE,
+                            "Seleccione la unidad de temperatura de origen", "Conversor de Temperatura", JOptionPane.QUESTION_MESSAGE,
                             null, seleccion2, seleccion2[0]);
+                    if (menuSeleccion1 == null) {
+                        continue; // Salir del ciclo actual y volver a mostrar el menú principal
+                    }
                     menuSeleccion2 = (String) JOptionPane.showInputDialog(null,
-                            "A", "Te", JOptionPane.QUESTION_MESSAGE,
+                            "Seleccione la unidad de temperatura de destino", "Conversor de Temperatura", JOptionPane.QUESTION_MESSAGE,
                             null, seleccion2, seleccion2[0]);
+                    if (menuSeleccion2 == null) {
+                        continue; // Salir del ciclo actual y volver a mostrar el menú principal
+                    }
                     if (menuSeleccion1.equals(menuSeleccion2)) {
                         JOptionPane.showMessageDialog(null, "No hay nada que convertir");
                     }
@@ -75,19 +95,20 @@ public class Menu extends JFrame {
                             JOptionPane.showMessageDialog(null, "Debe ingresar un valor numérico válido");
                             continue;
                         }
-
-                        JOptionPane.showMessageDialog(null, String.format("%.2f", Convertir.convertirTemperatura
-                                (valor, menuSeleccion1, menuSeleccion2)) + " Grados " + menuSeleccion2);
-
+                        //Se usa el metodo de la clase Convertir
+                        double resultado = Convertir.convertirTemperatura(valor, menuSeleccion1, menuSeleccion2);
+                        String mensaje = String.format("%.2f %s equivalen a %.2f %s", valor, menuSeleccion1, resultado, menuSeleccion2);
+                        JOptionPane.showMessageDialog(null, mensaje);
                     }
                 }
-                //Metodo para el conversor de divisas usando la API
-                case "Divisas Online" -> {
+
+                //Menu para el conversor de divisas usando la API
+                case "Conversor de Divisas Online" -> {
                     menuSeleccion1 = ((Moneda) JOptionPane.showInputDialog(null,
-                            "De", "Moneda", JOptionPane.QUESTION_MESSAGE,
+                            "Seleccione la moenda de origen", "Conversor de Divisas", JOptionPane.QUESTION_MESSAGE,
                             null, Moneda.values(), Moneda.values()[0])).getCodigo();
                     menuSeleccion2 = ((Moneda) JOptionPane.showInputDialog(null,
-                            "A", "Moneda", JOptionPane.QUESTION_MESSAGE,
+                            "Seleccione la moneda de destino", "Conversor de Divisas", JOptionPane.QUESTION_MESSAGE,
                             null, Moneda.values(), Moneda.values()[0])).getCodigo();
                     if (menuSeleccion1.equals(menuSeleccion2)) {
                         JOptionPane.showMessageDialog(null, "No hay nada que convertir");
@@ -99,7 +120,7 @@ public class Menu extends JFrame {
                             JOptionPane.showMessageDialog(null, "Debe ingresar un valor numérico válido");
                             continue;
                         }
-
+                        //Se usa el metodo de la clase ConvertirApi la cual realiza la request
                         try {
                             double resultado = Double.parseDouble(ConvertirApi.Api(menuSeleccion1, menuSeleccion2, valor));
                             JOptionPane.showMessageDialog(null, String.format("%.2f", valor) + " " + menuSeleccion1 + " = " +

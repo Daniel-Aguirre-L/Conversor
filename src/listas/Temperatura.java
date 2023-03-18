@@ -1,4 +1,4 @@
-package aplicaciones;
+package listas;
 
 public enum Temperatura {
     CELSIUS ("Celsius"),
