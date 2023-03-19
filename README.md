@@ -1,7 +1,5 @@
 # Oracle Next Education - Alura Challenge #2 
-![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-![](https://raw.githubusercontent.com/Agathion-JD/Assets/9f5db62122f1d19846b07a3deb2f3f465bb4bf38/logo-alura.svg?token=A4MPWRBTMJOENLRFFG6OVNDECZDBK)
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://raw.githubusercontent.com/Agathion-JD/Assets/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/logo-alura.svg?token=A4MPWRC6UJS2FDPMME2TCDDECZJNQ)
 
 ¡Bienvenido al primer desafío del Challenge Java!
 
@@ -39,7 +37,7 @@ El conversor de divisas online utiliza la API de CURRENCY API.<a href="https://c
 
 ### Ejecución
 
-![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu.PNG?token=GHSAT0AAAAAAB72PM4FO4NZEZHHNDDWCQAOZAWJPWQ)
+![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu.PNG?token=GHSAT0AAAAAAB72PM4FCUWZ4HXYGYFRLXBUZAWKJRQ)
 
 ![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu2.png?token=GHSAT0AAAAAAB72PM4EFY25MDZCIVI72CYMZAWJFLQ) 
 
