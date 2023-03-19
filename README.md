@@ -1,5 +1,5 @@
 # Oracle Next Education - Alura Challenge #2 
-![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://raw.githubusercontent.com/Agathion-JD/Assets/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/logo-alura.svg?token=A4MPWRC6UJS2FDPMME2TCDDECZJNQ)
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/logo-alura.svg)
 
 ¡Bienvenido al primer desafío del Challenge Java!
 
@@ -37,16 +37,9 @@ El conversor de divisas online utiliza la API de CURRENCY API.<a href="https://c
 
 ### Ejecución
 
-![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu.PNG?token=GHSAT0AAAAAAB72PM4FCUWZ4HXYGYFRLXBUZAWKJRQ)
 
-![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu2.png?token=GHSAT0AAAAAAB72PM4EFY25MDZCIVI72CYMZAWJFLQ) 
 
-![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu3.PNG?token=GHSAT0AAAAAAB72PM4EMICVWDPXUVWAELWGZAWJGOQ) 
+![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu.PNG)  ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu2.png)  ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu3.PNG)  ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu4.PNG)  ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu5.PNG) ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu6.PNG) ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu7.PNG)
 
-![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu4.PNG?token=GHSAT0AAAAAAB72PM4FF4TQTF32M7YAAMNGZAWJHJQ) 
 
-![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu5.PNG?token=GHSAT0AAAAAAB72PM4F2CWDY2BK5Z3VFPMKZAWJH6Q)
 
-![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu6.PNG?token=GHSAT0AAAAAAB72PM4EZ3QGQCS7NZ6KBPIIZAWJI3A) 
-
-![](https://raw.githubusercontent.com/Agathion-JD/Assets/main/Menu7.PNG?token=GHSAT0AAAAAAB72PM4FNZFMJIHYSOGICXSGZAWJJGQ)
