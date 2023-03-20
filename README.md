@@ -13,7 +13,9 @@ Este es un pequeño proyecto de Java que permite convertir entre distintas moned
 
 ### Funcionalidades
 Conversor de divisas online usando una API.
+
 Conversor de divisas offline .
+
 Conversor de temperaturas.
 
 ### Uso
