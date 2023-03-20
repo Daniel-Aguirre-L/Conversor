@@ -9,6 +9,8 @@ En esta oportunidad, a los Devs se nos solicitó crear un conversor de divisas u
 
 Este es un pequeño proyecto de Java que permite convertir entre distintas monedas y unidades de temperatura.
 
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjAyOWNiZDUwMGJkNzljNGM3MjU1ZjI5MGFhMzFlMjk3NTM4YTFmNiZjdD1n/UUg825cspKUnXPbGQK/giphy.gif)
+
 ### Funcionalidades
 Conversor de divisas online usando una API.
 Conversor de divisas offline .
@@ -37,9 +39,11 @@ El conversor de divisas online utiliza la API de CURRENCY API.<a href="https://c
 
 ### Ejecución
 
-
-
 ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu.PNG)  ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu2.png)  ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu3.PNG)  ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu4.PNG)  ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu5.PNG) ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu6.PNG) ![](https://github.com/Agathion-JD/Assets/blob/26c3c5d5ebb6fd28e17bb2447548455ca65f2596/Menu7.PNG)
+
+
+
+
 
 
 
